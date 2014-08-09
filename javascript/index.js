@@ -1,5 +1,4 @@
 function init() {
-
 	var canvas = document.getElementById('rocket'),
 		stage = new createjs.Stage(canvas),
 		conterX = canvas.width/2,
@@ -17,9 +16,8 @@ function init() {
 	    }
 	}
 	canvas.width = w;
-	canvas.height = h - 30  ;
-		
-	
+	canvas.height = h;
+
 	var shape = new createjs.Bitmap('images/rocket.png');
 	shape.x = conterX;
 	shape.y = conterY;
@@ -32,14 +30,11 @@ function init() {
 
   		var difX = stage.mouseX - shape.x;
   		var difY = stage.mouseY - shape.y;
-
 	  	shape.x += difX/5;
 	 	shape.y += difY/5;
+
 
 		shape.rotation = Math.atan2(difY, difX) * 180/ Math.PI ;
 	 	stage.update();
 	 });
 }
-
-
-
